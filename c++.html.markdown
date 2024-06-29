@@ -263,10 +263,10 @@ std::string& fooRef = foo; // This creates a reference to foo.
 fooRef += ". Hi!"; // Modifies foo through the reference
 std::cout << fooRef; // Prints "I am foo. Hi!"
 
+std::cout << &fooRef << '\n'; // Prints the address of foo
 // Doesn't reassign "fooRef". This is the same as "foo = bar", and
 //   foo == "I am bar"
 // after this line.
-std::cout << &fooRef << '\n'; // Prints the address of foo
 fooRef = bar;
 std::cout << &fooRef << '\n'; // Still prints the address of foo
 std::cout << fooRef << '\n';  // Prints "I am bar"
@@ -840,7 +840,7 @@ void doSomethingWithAFile(const std::string& filename)
 // manage the lifetime of the object being pointed to without ever needing to explicitly delete
 // the object. The term itself simply describes a set of pointers with the
 // mentioned abstraction.
-// Smart pointers should preferred over raw pointers, to prevent
+// Smart pointers should be preferred over raw pointers, to prevent
 // risky memory leaks, which happen if you forget to delete an object.
 
 // Usage of a raw pointer:
