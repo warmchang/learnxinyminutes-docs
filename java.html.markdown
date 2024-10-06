@@ -44,6 +44,9 @@ Multi-line comments look like this.
 import java.util.ArrayList;
 // Import all classes inside of java.security package
 import java.security.*;
+// Java to illustrate calling of static members and methods without calling classname
+import static java.lang.Math.*;
+import static java.lang.System.*;
 
 public class LearnJava {
 
@@ -126,8 +129,8 @@ public class LearnJava {
         // <name1> = <name2> = <name3> = <val>
         int barInt1, barInt2, barInt3;
         barInt1 = barInt2 = barInt3 = 1;
-	// Shorthand for multiple declarations
-	int barInt4 = 1, barInt5 = 2; 
+        // Shorthand for multiple declarations
+        int barInt4 = 1, barInt5 = 2; 
 
 
         /*
@@ -211,8 +214,20 @@ public class LearnJava {
         // Prefer the String constructor when you need an exact value.
         BigDecimal tenCents = new BigDecimal("0.1");
 
+        // Type inference with 'var'
+        var x = 100; // int
+        var y = 1.90; // double
+        var z = 'a'; // char
+        var p = "tanu"; // String
+        var q = false; // boolean
+
         // Strings
         String fooString = "My String Is Here!";
+
+        // Text blocks
+        vat textBlock = """
+                        This is a <Text Block> in Java 
+                        """;
 
         // \n is an escaped character that starts a new line
         String barString = "Printing on a new line?\nNo Problem!";
@@ -310,8 +325,8 @@ public class LearnJava {
         ///////////////////////////////////////
         System.out.println("\n->Operators");
 
-	int i1 = 1, i2 = 2;
-	
+        int i1 = 1, i2 = 2;
+
         // Arithmetic is straightforward
         System.out.println("1+2 = " + (i1 + i2)); // => 3
         System.out.println("2-1 = " + (i2 - i1)); // => 1
@@ -459,6 +474,8 @@ public class LearnJava {
             System.out.println(br.readLine());
             // In Java 7, the resource will always be closed, even if it throws
             // an Exception.
+        } catch (IOException | SQLException ex) {
+            // Java 7+ Multi catch block handle both exceptions
         } catch (Exception ex) {
             //The resource will be closed before the catch statement executes.
             System.out.println("readLine() failed.");
@@ -543,7 +560,7 @@ public class LearnJava {
         // is called when the anonymous inner class is created.
         // This does not only work for Collections, it works for all
         // non-final classes.
-        
+
 
         // Another option was to initialize the Collection from an array,
         // using Arrays.asList() method:
@@ -852,6 +869,12 @@ public abstract class Mammal()
     }
 }
 
+// Java Records are a concise way to define immutable data carrier classes, automatically
+// generating boilerplate code like constructors, equals(), hashCode()and toString().
+// This automatically creates an immutable class Person with fields name and age.
+public record Person(String name, int age) {}
+Person p = new Person("Alice", 30);
+
 // Enum Type
 //
 // An enum type is a special data type that enables for a variable to be a set
@@ -926,7 +949,7 @@ import java.security.SecureRandom;
 public class Lambdas {
     public static void main(String[] args) {
         // Lambda declaration syntax:
-	// <zero or more parameters> -> <expression body or statement block>
+        // <zero or more parameters> -> <expression body or statement block>
 
         // We will use this hashmap in our examples below.
         Map<String, String> planets = new HashMap<>();

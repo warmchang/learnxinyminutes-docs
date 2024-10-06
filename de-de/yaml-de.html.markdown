@@ -20,7 +20,7 @@ YAML ist eine Erweiterung von JSON mit der Erweiterung um syntaktisch wichtige Z
 #################
 
 # Unser Kernobjekt (für das ganze Dokument) wird das Assoziative Datenfeld (Map) sein,
-# welches equivalent zu einem Hash oder einem Objekt einer anderen Sprache ist.
+# welches äquivalent zu einem Hash oder einem Objekt einer anderen Sprache ist.
 Schlüssel: Wert
 nochn_Schlüssel: Hier kommt noch ein Wert hin.
 eine_Zahl: 100
@@ -56,7 +56,7 @@ folded_style: >
 # COLLECTION TYPEN #
 ####################
 
-# Verschachtelung wird duch Einrückung erzielt.
+# Verschachtelung wird durch Einrückung erzielt.
 eine_verschachtelte_map:
     schlüssel: wert
     nochn_Schlüssel: Noch ein Wert.

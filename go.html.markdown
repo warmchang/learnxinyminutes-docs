@@ -223,7 +223,7 @@ func learnFlowControl() {
 		// Cases don't "fall through".
 		/*
 			There is a `fallthrough` keyword however, see:
-			https://github.com/golang/go/wiki/Switch#fall-through
+			https://go.dev/wiki/Switch#fall-through
 		*/
 	case 43:
 		// Unreached.
@@ -323,7 +323,7 @@ func learnDefer() (ok bool) {
 	defer fmt.Println("deferred statements execute in reverse (LIFO) order.")
 	defer fmt.Println("\nThis line is being printed first because")
 	// Defer is commonly used to close a file, so the function closing the
-	// file stays close to the function opening the file.
+	// file stays near the function opening the file.
 	return true
 }
 

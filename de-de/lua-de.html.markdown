@@ -29,11 +29,11 @@ t = "Doppelte Anführungszeichen sind auch OK"
 u = [[ Doppelte eckige Klammern
        beginnen und beenden
        mehrzeilige Zeichenketten.]]
-t = nil  -- Undefineren von t; Lua hat einen Garbage Collection.
+t = nil  -- Undefinieren von t; Lua hat einen Garbage Collection.
 
 -- Blöcke werden durch Schlüsselwörter wie do/end markiert:
 while num < 50 do
-  num = num + 1  -- Es gibt Keine Operatoren wie ++ oder +=
+  num = num + 1  -- Es gibt keine Operatoren wie ++ oder +=
 end
 
 -- If Bedingungen:
@@ -72,7 +72,7 @@ for i = 1, 100 do  -- Ein Bereich inkludiert beide Enden.
   karlSum = karlSum + i
 end
 
--- Verwende "100, 1, -1" als Breich für Countdowns:
+-- Verwende "100, 1, -1" als Bereich für Countdowns:
 fredSum = 0
 for j = 100, 1, -1 do fredSum = fredSum + j end
 
@@ -161,7 +161,7 @@ print(t.key1)  -- Ausgabe 'value1'.
 t.newKey = {}  -- Neues Schlüssel/Wert-Paar hinzufügen.
 t.key2 = nil   -- key2 aus der Tabelle entfernen.
 
--- Literale notation für jeden (nicht-nil) Wert als Schlüssel:
+-- Literale Notation für jeden (nicht-nil) Wert als Schlüssel:
 u = {['@!#'] = 'qbert', [{}] = 1729, [6.28] = 'tau'}
 print(u[6.28])  -- Ausgabe "tau"
 
@@ -171,7 +171,7 @@ a = u['@!#']  -- Nun ist a = 'qbert'.
 b = u[{}]     -- Wir würden 1729 erwarten, aber es ist nil:
 -- b = nil weil der Lookup fehlschlägt. Er schlägt Fehl, weil der Schlüssel
 -- den wir verwendet haben nicht das gleiche Objekt ist das wir verwendet
--- haben um den original Wert zu speichern. Zahlen und Zeichnkette sind daher
+-- haben um den original Wert zu speichern. Zahlen und Zeichenkette sind daher
 -- die praktischeren Schlüssel.
 
 -- Eine Funktion mit nur einem Tabellen-Parameter benötigt keine Klammern.
@@ -230,7 +230,7 @@ s = f1 + f2  -- Rufe __add(f1, f2) vom der Metatabelle von f1 auf.
 
 -- Die nächste Zeile schlägt fehl weil s keine Metatabelle hat:
 -- t = s + s
--- Mihilfe von Klassen ähnlichen Mustern kann das gelöst werden.
+-- Mithilfe von Klassen ähnlichen Mustern kann das gelöst werden.
 -- Siehe weiter unten.
 
 -- Ein __index einer Metatabelle überlädt Punkt-Lookups:
@@ -269,10 +269,10 @@ eatenBy = myFavs.animal  -- Funktioniert dank Metatabelle!
 -- 3.2 Klassen-Artige Tabellen und Vererbung.
 --------------------------------------------------------------------------------
 
--- Klassen sind in Lua nicht eingebaut. Es gibt verschieden Wege sie mithilfe
+-- Klassen sind in Lua nicht eingebaut. Es gibt verschiedene Wege sie mithilfe
 -- von Tabellen und Metatabellen zu erzeugen.
 
--- Die Erklärund des Beispiels erfolgt unterhalb.
+-- Die Erklärung des Beispiels erfolgt unterhalb.
 
 Dog = {}                                   -- 1.
 
@@ -294,7 +294,7 @@ mrDog:makeSound()  -- 'I say woof'         -- 8.
 --    "function tablename.fn(self, ...)", Der : fügt nur ein Argument namens
 --    self hinzu. Siehe 7 & 8 um zu sehen wie self seinen Wert bekommt.
 -- 3. newObj wird eine Instanz von Dog.
--- 4. "self" ist die zu Instanzierende Klasse. Meistern ist self = Dog, aber
+-- 4. "self" ist die zu instanziierende Klasse. Meistern ist self = Dog, aber
 --    dies kann durch Vererbung geändert werden. newObj bekommt die Funktionen
 --    von self wenn wir die Metatabelle von newObj und __index von self auf
 --    self setzen.
@@ -419,7 +419,7 @@ Wichtige Themen die hier nicht angesprochen wurden; die Standard-Bibliotheken:
 * [`io` library](http://lua-users.org/wiki/IoLibraryTutorial)
 * [`os` library](http://lua-users.org/wiki/OsLibraryTutorial)
 
-Übrigends, die gesamte Datei ist gültiges Lua. Speichere sie als learn.lua und
+Übrigens, die gesamte Datei ist gültiges Lua. Speichere sie als learn.lua und
 starte sie als "`lua learn.lua`" !
 
 Die Erstfassung ist von tylerneylon.com, und ist auch hier verfügbar: [GitHub gist](https://gist.github.com/tylerneylon/5853042). Viel Spaß mit Lua!

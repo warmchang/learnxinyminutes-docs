@@ -200,7 +200,7 @@ while (true) {
     // Eine unendliche Schleife!
 }
 
-// Do-while-Scheifen arbeiten wie while-Schleifen, abgesehen davon, dass sie
+// Do-while-Schleifen arbeiten wie while-Schleifen, abgesehen davon, dass sie
 // immer mindestens einmal ausgeführt werden.
 var input;
 do {
@@ -370,7 +370,7 @@ var anotherFunc = function(s){
 }
 anotherFunc.call(myObj, " And Hello Moon!"); // = "Hello World! And Hello Moon!"
 
-// 'apply' funktioniert beiahe identisch, erwartet die übergebenen Argumente
+// 'apply' funktioniert beinahe identisch, erwartet die übergebenen Argumente
 // aber in einem Array
 
 anotherFunc.apply(myObj, [" And Hello Sun!"]); // = "Hello World! And Hello Sun!"
@@ -515,7 +515,7 @@ MDN's [A re-introduction to JavaScript](https://developer.mozilla.org/en-US/docs
 
 Dieses Tutorial hat nur die Sprache JavaScript vorgestellt; um mehr über den  Einsatz in Websites zu lernen, ist es ein guter Start etwas über das [Document Object Model](https://developer.mozilla.org/en-US/docs/Using_the_W3C_DOM_Level_1_Core) zu lernen.
 
-[JavaScript Garden](http://bonsaiden.github.io/JavaScript-Garden/) ist eine tiefgehende Einführung in die kontra-intuitiven Parts der Sprache.
+[JavaScript Garden](https://shamansir.github.io/JavaScript-Garden/) ist eine tiefgehende Einführung in die kontra-intuitiven Parts der Sprache.
 
 [JavaScript: The Definitive Guide](http://www.amazon.com/gp/product/0596805527/) ist ein Klassiker unter den Referenzen.
 

@@ -10,7 +10,7 @@ lang: de-de
 
 Clojure ist ein Lispdialekt, der für die Java Virtual Maschine entwickelt worden ist. Sie hat eine stärkere Betonung auf reine [funktionale Programmierung](https://en.wikipedia.org/wiki/Functional_programming) als Common Lisp. Jedoch besitzt sie je nach Bedarf mehrere [STM](https://en.wikipedia.org/wiki/Software_transactional_memory) Werkzeuge zur Handhabung von Zustand.
 
-Diese Verknüpfung erlaubt es parallele Verarbeitung sehr einfach und häufig automatisch zu verarbeiten.
+Diese Verknüpfung erlaubt es, parallele Verarbeitung sehr einfach und häufig automatisch zu verarbeiten.
 
 (Du brauchst die Clojure Version 1.2 oder neuer)
 
@@ -23,7 +23,7 @@ Diese Verknüpfung erlaubt es parallele Verarbeitung sehr einfach und häufig au
 ; Der Clojure Leser nimmt an, dass das Erste, was aufgerufen wird
 ; eine Funktion oder ein Makro ist, der Rest sind Argumente.
 
-; Der erste Aufruf in einer Datei sollte ns sein, um den Namespacezu setzen.
+; Der erste Aufruf in einer Datei sollte ns sein, um den Namespace zu setzen.
 (ns learnclojure)
 
 ; Weitere einfache Beispiele:
@@ -51,9 +51,9 @@ Diese Verknüpfung erlaubt es parallele Verarbeitung sehr einfach und häufig au
 ;;;;;;;;;;;;;
 
 ; Clojure verwendet Javas Objekt Typen für Booleans, Strings und Zahlen.
-; Verwende `class` um sie zu inszipieren.
-(class 1) ; Integer Literalte sind standardmäßig java.lang.Long
-(class 1.); Float Literale sind java.lang.Double
+; Verwende `class` um sie zu inspizieren.
+(class 1) ; Integer-Literale sind standardmäßig java.lang.Long
+(class 1.); Float-Literale sind java.lang.Double
 (class ""); Strings sind immer in doppelten Anführungszeichen notiert und sind java.lang.String
 (class false) ; Booleans sind java.lang.Boolean
 (class nil); Der "null" Wert heißt nil
@@ -66,7 +66,7 @@ Diese Verknüpfung erlaubt es parallele Verarbeitung sehr einfach und häufig au
 ; Du kannst eine zitierte Liste evaluieren
 (eval '(+ 1 2)) ; => 3
 
-; Kollektioenn & Sequenzen
+; Kollektionen & Sequenzen
 ;;;;;;;;;;;;;;;;;;;
 
 ; Listen sind Linked-Lists Datenstrukturen, während Vektoren arraybasierend sind.
@@ -76,10 +76,10 @@ Diese Verknüpfung erlaubt es parallele Verarbeitung sehr einfach und häufig au
 
 ; Eine Liste würde nur als (1 2 3) geschrieben, aber wir müssen es zitieren
 ; damit der Leser aufhört zu denken, es sei eine Funktion.
-; Außerdem ist (list 1 2 3) das Selbe, wie '(1 2 3)
+; Außerdem ist (list 1 2 3) dasselbe, wie '(1 2 3)
 
-; "Kollektioen" sind nur Gruppen von Daten
-; Listen und Vektoren sind Kolllektionen:
+; "Kollektionen" sind nur Gruppen von Daten
+; Listen und Vektoren sind Kollektionen:
 (coll? '(1 2 3)) ; => true
 (coll? [1 2 3]) ; => true
 
@@ -115,7 +115,7 @@ Diese Verknüpfung erlaubt es parallele Verarbeitung sehr einfach und häufig au
 ; = (+ (+ (+ 1 2) 3) 4)
 ; => 10
 
-; Reduce kann auch einen Initalwert als Argument verwenden
+; Reduce kann auch einen Initialwert als Argument verwenden
 (reduce conj [] '(3 2 1))
 ; = (conj (conj (conj [] 3) 2) 1)
 ; => [3 2 1]
@@ -178,12 +178,12 @@ x ; => 1
 (class {:a 1 :b 2 :c 3}) ; => clojure.lang.PersistentArrayMap
 (class (hash-map :a 1 :b 2 :c 3)) ; => clojure.lang.PersistentHashMap
 
-; Arraymaps werden durch die meisten Operatioen automatisch zu Hashmaps,
+; Arraymaps werden durch die meisten Operationen automatisch zu Hashmaps,
 ; sobald sie groß genug werden. Das heißt du musst dich nicht darum sorgen.
 
 ; Maps können einen beliebigen Hash-Typ als Schlüssel verwenden, in der Regel
 ; sind jedoch Keywords am besten. Keywords sind wie Strings, jedoch besitzen sie
-; Performancevorteile
+; Performance-Vorteile
 (class :a) ; => clojure.lang.Keyword
 
 (def stringmap {"a" 1, "b" 2, "c" 3})
@@ -291,7 +291,7 @@ keymap ; => {:a 1, :b 2, :c 3}
                  ; Result: [1 3 5 7 9]
 
 ; Wenn du in einer Situation bist, in der du mehr Freiheit willst,
-; wohin du das Ergebnis vorheriger Datentransformationen in einem Ausruck
+; wohin du das Ergebnis vorheriger Datentransformationen in einem Ausdruck
 ; platzieren möchtest, kannst du das as-> Macro verwenden. Mit diesem Macro
 ; kannst du einen speziellen Namen auf die Ausgabe einer Transformationen geben.
 ; Du kannst es als Platzhalter in verketteten Ausdrücken verwenden:
@@ -323,7 +323,7 @@ keymap ; => {:a 1, :b 2, :c 3}
 ; Hier verwenden wir das Modul clojure.string und die Funktion blank?
 (clojure.string/blank? "") ; => true
 
-; Du kannst auch einem Modul einem kürzerern Namen beim Import geben
+; Du kannst auch einem Modul einen kürzeren Namen beim Import geben
 (require '[clojure.string :as str])
 (str/replace "Das ist ein Test." #"[a-o]" str/upper-case) ; => "DAs IsT EIN TEsT."
 ; (#"" bezeichnet einen regulären literalen Ausdruck)
@@ -374,7 +374,7 @@ keymap ; => {:a 1, :b 2, :c 3}
 ; um mit persistenten Zuständen umzugehen. Es gibt ein Paar Konstrukte in
 ; Clojure die es verwenden.
 
-; Ein Atom ist das Einfachste. Gebe es einen Initalwert
+; Ein Atom ist das Einfachste. Gebe es einen Initialwert
 (def my-atom (atom {}))
 
 ; Update ein Atom mit swap!.
